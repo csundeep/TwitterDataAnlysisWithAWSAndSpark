@@ -1,6 +1,6 @@
 package com.aws.twitter.dynamoDB.client;
 
-import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.aws.twitter.dynamoDB.model.TwitterUserRecord;
@@ -8,7 +8,7 @@ import com.aws.twitter.dynamoDB.model.TwitterUserRecord;
 public class DynamoDBClient {
 
 	static AmazonDynamoDBClient client = new AmazonDynamoDBClient(
-			new BasicAWSCredentials("AKIAJOEO24AKMZW6VRFA", "xryY41BNd3rwkRUJmWj2Fc2sbpBD34fCM+PpET03"));
+			new ProfileCredentialsProvider("sandy"));
 
 	public void saveRecord(TwitterUserRecord item) {
 
